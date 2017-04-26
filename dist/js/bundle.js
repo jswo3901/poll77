@@ -58632,11 +58632,11 @@
 	      _react2.default.createElement(
 	        'p',
 	        { className: 'text-center' },
-	        '\uC544\uC9C1\uB3C4 \uAC00\uC785\uC744 \uC548\uD558\uC168\uC2B5\uB2C8\uAE4C?',
+	        'Voting app\uC5D0 \uCC98\uC74C\uC774\uC138\uC694?',
 	        _react2.default.createElement(
 	          _reactRouter.Link,
 	          { to: '/signup', className: 'margin-horizontal' },
-	          '\uAC00\uC785\uD558\uB7EC \uAC00\uAE30'
+	          '\uC9C0\uAE08 \uAC00\uC785\uD558\uC138\uC694'
 	        )
 	      ),
 	      this.state.error ? _react2.default.createElement(

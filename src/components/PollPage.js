@@ -89,7 +89,7 @@ const ShareButtons = React.createClass ({
     if ( !this.state.auth )
       return <span></span>;
 
-    let poll_url = 'https://poll.herokuapp.com/poll/' + this.props.poll._id;
+    let poll_url = 'https://poll77.herokuapp.com/poll/' + this.props.poll._id;
     console.log (this.props);
     return (
       <div className="align-center">

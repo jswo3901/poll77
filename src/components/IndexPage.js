@@ -82,7 +82,7 @@ const PollsTabContent = React.createClass ({
         { this.state.loading_polls ?
           <CircularProgress size={30} thickness={3} />
           :
-          <FlatButton fullWidth={true} secondary={true} label="Load more polls"
+          <FlatButton fullWidth={true} secondary={true} label="더 보기"
             onClick={this.loadMorePolls} />
         }
       </div>
@@ -123,19 +123,19 @@ export default React.createClass ({
       <div>
         <Paper style={{ padding: '8px', marginBottom: '8px' }}>
           <h1 className="text-center">Voting App</h1>
-          <h2 className="text-center">Create custom polls with live results.</h2>
+          <h2 className="text-center">설문조사를 만들어 주세요.</h2>
           { ( typeof this.props.state == 'undefined' || !this.props.state.user ) ? (
             <Link to="/signup">
-              <RaisedButton fullWidth={true} primary={true} label="Sign Up Now" />
+              <RaisedButton fullWidth={true} primary={true} label="가입하기" />
             </Link> ) : ''
           }
         </Paper>
 
         <Tabs className="no-main">
-          <Tab label="Popular" icon={<FontIcon className="material-icons">terrain</FontIcon>}>
+          <Tab label="인기순" icon={<FontIcon className="material-icons">terrain</FontIcon>}>
             { visibleContent ? <PollsTabContent type='popular' {...this.props} /> : '' }
           </Tab>
-          <Tab label="Latest" icon={<FontIcon className="material-icons">format_indent_increase</FontIcon>}>
+          <Tab label="최근순" icon={<FontIcon className="material-icons">format_indent_increase</FontIcon>}>
             { visibleContent ? <PollsTabContent type='latest' {...this.props} /> : '' }
           </Tab>
         </Tabs>

@@ -22,26 +22,26 @@ export default React.createClass ({
       <Paper style={{ margin: '8px', padding: '8px' }}>
         <h1 className="text-center">Login</h1>
         <p className="text-center">
-          Not register yet?
+          아직도 가입을 안하셨습니까?
           <Link to='/signup' className="margin-horizontal">
-            Sign Up
+            가입하러 가기
           </Link>
         </p>
 
         {this.state.error ? <p className="text-center text-error">{this.state.error}</p> : ''}
 
         <div className="align-center">
-          <TextField hintText="Username" id="username" name="username" type="text"
+          <TextField hintText="아이디" id="username" name="username" type="text"
             value={this.state.name} onChange={(e) => this.handleChange ('name', e)} />
         </div>
         <div className="align-center">
-          <TextField hintText="Password" id="password" name="password" type="password"
+          <TextField hintText="비밀번호" id="password" name="password" type="password"
             value={this.state.pass} onChange={(e) => this.handleChange ('pass', e)} />
         </div>
         <div className="align-center">
           {this.state.load ?
               <CircularProgress style={{ marginTop: '8px' }} size={40} thickness={5} /> :
-              <RaisedButton primary={true} onClick={this.login} label="Login" />}
+              <RaisedButton primary={true} onClick={this.login} label="로그인" />}
         </div>
       </Paper>
     );

@@ -26,10 +26,10 @@ const QuestionStep = React.createClass ({
   render () {
     return (
       <div>
-        <p>Chose a name for the poll</p>
-        <TextField hintText="Ex. What's your age?" id="poll_name" name="poll_name" type="text"
+        <p></p>
+        <TextField hintText="Ex. 당신이 좋아하는 음식은 무엇입니까?" id="poll_name" name="poll_name" type="text"
           value={this.state.name} onChange={this.changeName} />
-        <p className="text-small muted">Minimum 6 characters</p>
+        <p className="text-small muted">제목을 6글자 이상 입력하세요</p>
       </div>
     );
   },
@@ -51,7 +51,7 @@ const AddOption = React.createClass ({
   render () {
     return (
       <div>
-        <TextField hintText="Ex. 20 years old" id="poll_option" name="poll_option" type="text"
+        <TextField hintText="Ex. 떡볶이" id="poll_option" name="poll_option" type="text"
           value={this.state.option} onChange={(e) => this.setState ({ option: e.target.value })} />
         <RaisedButton secondary={true} label="Add Option" onClick={this.sendOption}
           disabled={!this.state.option.trim ().length} />
@@ -99,7 +99,7 @@ const OptionsStep = React.createClass ({
 
     return (
       <div>
-        <p>Insert at least two options</p>
+        <p>최소 2개의 옵션을 추가하세요.</p>
 
         {optionsList}
 
@@ -172,22 +172,22 @@ export default React.createClass ({
 
     return (
       <div>
-        <h1 className="text-center">Add a new poll</h1>
+        <h1 className="text-center">설문 추가하기</h1>
 
         <div className="align-center">
           <Stepper activeStep={this.state.step}>
             <Step>
-              <StepLabel>Question</StepLabel>
+              <StepLabel>질문</StepLabel>
             </Step>
             <Step>
-              <StepLabel>Options</StepLabel>
+              <StepLabel>선택지</StepLabel>
             </Step>
           </Stepper>
 
           {stepContent}
 
           {(this.state.step > 0) ?
-            <RaisedButton style={{ float: 'left' }} primary={true} label="Previous Step" onClick={
+            <RaisedButton style={{ float: 'left' }} primary={true} label="이전 단계로" onClick={
               () => this.setState ({ step: this.state.step - 1 })
             } /> : ''}
 
@@ -195,7 +195,7 @@ export default React.createClass ({
             <RaisedButton style={{ float: 'right' }} primary={true} label="Next Step" onClick={
               () => this.setState ({ step: this.state.step + 1 })
             } disabled={!this.state.completed} /> :
-            <RaisedButton style={{ float: 'right' }} primary={true} label="Publish"
+            <RaisedButton style={{ float: 'right' }} primary={true} label="설문 생성하기"
               onClick={this.publishPoll} disabled={!this.state.completed} />}
         </div>
       </div>
@@ -227,9 +227,9 @@ export default React.createClass ({
           loading: false,
           published: (
             <div className="align-center">
-              <h2 className="text-center">Hoo-ray! Poll published!</h2>
+              <h2 className="text-center">설문이 작성 되었습니다!</h2>
               <Link to={data.url}>
-                <RaisedButton primary={true} label="Show this poll" />
+                <RaisedButton primary={true} label="내 설문 보러가기" />
               </Link>
             </div>
           )

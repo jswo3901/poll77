@@ -74,17 +74,17 @@ export default React.createClass ({
       AppBarMenu = (
         <div className="appbar-btn">
           <Link to="/">
-            <FlatResponsiveButton label="Home" icon={
+            <FlatResponsiveButton label="홈" icon={
               <FontIcon className="material-icons">home</FontIcon>
             } />
           </Link>
           <Link to="/signup">
-            <FlatResponsiveButton label="Sign Up" icon={
+            <FlatResponsiveButton label="회원가입" icon={
               <FontIcon className="material-icons">person_add</FontIcon>
             } />
           </Link>
           <Link to="/login">
-            <FlatResponsiveButton label="Login" icon={
+            <FlatResponsiveButton label="로그인" icon={
               <FontIcon className="material-icons">account_circle</FontIcon>
             } />
           </Link>
@@ -95,22 +95,22 @@ export default React.createClass ({
       AppBarMenu = (
         <div className="appbar-btn">
           <Link to="/">
-            <FlatResponsiveButton label="Home" icon={
+            <FlatResponsiveButton label="홈" style={{ float: 'left' }} icon={
               <FontIcon className="material-icons">home</FontIcon>
             }/>
           </Link>
           <Link to="/add-poll">
-            <FlatResponsiveButton label="New Poll" icon={
+            <FlatResponsiveButton label="설문조사 만들기" icon={
               <FontIcon className="material-icons">playlist_add</FontIcon>
             }/>
           </Link>
           <Link to="/my-poll">
-            <FlatResponsiveButton label="My Polls" icon={
+            <FlatResponsiveButton label="마이룸" icon={
               <FontIcon className="material-icons">account_circle</FontIcon>
             }/>
           </Link>
           <Link to="/logout">
-            <FlatResponsiveButton label="Logout" icon={
+            <FlatResponsiveButton label="로그아웃" icon={
               <FontIcon className="material-icons">directions_run</FontIcon>
             } />
           </Link>
@@ -123,7 +123,7 @@ export default React.createClass ({
 
     return (
       <div>
-        <AppBar title="Vote!" showMenuIconButton={false} iconElementRight={AppBarMenu}>
+        <AppBar title="" showMenuIconButton={false} iconElementRight={AppBarMenu}>
         </AppBar>
 
         <div className="main">
@@ -131,12 +131,9 @@ export default React.createClass ({
         </div>
 
         <div className="divider"></div>
-        
+
         <p className="text-center muted text-small">
-          Coded and Written by <a href="http://neckersbox.eu">Davide Francesco Merico</a>.
-        </p>
-        <p className="text-center muted text-small">
-          <a href="https://github.com/NeckersBOX/votingapp">
+          <a href="https://github.com/jswo3901/project001">
             GitHub Project
           </a>
         </p>

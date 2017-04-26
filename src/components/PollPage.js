@@ -12,7 +12,7 @@ const ShowOption = React.createClass ({
     let percentage = (this.props.votes * 100) / (this.props.maxVotes ? this.props.maxVotes : 1);
     let voteButton = (
       <FlatButton style={{ display: 'inline-block' }} secondary={true}
-        label={this.props.voted.option ? "It's for you" : "It's for me"}
+        label={this.props.voted.option ? "It's for you" : "투표하기"}
         onClick={() => this.props.vote (this.props._id)} disabled={this.props.voted.option} />
     );
 
@@ -89,7 +89,7 @@ const ShareButtons = React.createClass ({
     if ( !this.state.auth )
       return <span></span>;
 
-    let poll_url = 'https://neckers-voteapp.herokuapp.com/poll/' + this.props.poll._id;
+    let poll_url = 'https://poll.herokuapp.com/poll/' + this.props.poll._id;
     console.log (this.props);
     return (
       <div className="align-center">
@@ -143,7 +143,7 @@ const AddOptionForm = React.createClass ({
 
     return (
       <div className="align-center">
-        <h2>Not enough options? Add another one!</h2>
+        <h2>옵션을 추가하세요.</h2>
         <TextField hintText="Ex. I love potato" id="poll_option" name="poll_option" type="text"
           value={this.state.option} onChange={(e) => this.setState ({ option: e.target.value })} />
 

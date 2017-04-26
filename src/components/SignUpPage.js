@@ -13,21 +13,21 @@ const SignUpSummary = React.createClass ({
   render () {
     let button = (
       <RaisedButton primary={true} onClick={() => this.setState ({ show_password: true })}
-        label="Show Password" />
+        label="비밀번호 보기" />
     );
 
     return (
       <Paper style={{ padding: '8px' }}>
-        <h1 className="text-center">Sign Up Completed!</h1>
+        <h1 className="text-center">가입완료!</h1>
         <p className="text-center">
-          Now you can login with this credentials:
+
         </p>
 
         <Table selectable={false}>
           <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
-              <TableHeaderColumn>Username</TableHeaderColumn>
-              <TableHeaderColumn>Password</TableHeaderColumn>
+              <TableHeaderColumn>아이디</TableHeaderColumn>
+              <TableHeaderColumn>비밀번호</TableHeaderColumn>
             </TableRow>
           </TableHeader>
           <TableBody displayRowCheckbox={false}>
@@ -62,20 +62,20 @@ export default React.createClass ({
 
     return (
       <Paper style={{ padding: '8px' }}>
-        <h1 className="text-center">Sign Up</h1>
+        <h1 className="text-center">회원가입</h1>
 
         <div className="align-center">
-          <TextField hintText="Email" id="email" name="user_mail" type="text"
+          <TextField hintText="이메일" id="email" name="user_mail" type="text"
             value={this.state.email.text} errorText={this.state.email.error}
             onChange={this.changeMail} />
         </div>
         <div className="align-center">
-          <TextField hintText="Username" id="username" name="user_name" type="text"
+          <TextField hintText="아이디" id="username" name="user_name" type="text"
             value={this.state.name.text}  errorText={this.state.name.error}
             onChange={this.changeName} />
         </div>
         <div className="align-center">
-          <TextField hintText="Password" id="password" name="user_pass" type="password"
+          <TextField hintText="비밀번호" id="password" name="user_pass" type="password"
             value={this.state.password.text} errorText={this.state.password.error}
             onChange={this.changePassword} />
         </div>
@@ -84,16 +84,16 @@ export default React.createClass ({
             mode="determinate" value={this.state.password_force} />
         </div>
         <div className="align-center">
-          <TextField hintText="Confirm Password" id="password2" name="user_pass2" type="password"
+          <TextField hintText="비밀번호 확인" id="password2" name="user_pass2" type="password"
             value={this.state.password_confirm.text} errorText={this.state.password_confirm.error}
             onChange={this.confirmPassword} />
         </div>
         <div className="align-center">
           <RaisedButton style={{ marginTop: '1em' }} primary={true} onClick={this.signUp}
-            label="Sign up and start publish" disabled={this.state.button_disabled} />
+            label="가입하기" disabled={this.state.button_disabled} />
         </div>
         <p className="text-center muted">
-          <small>Your email and your password will be kept private.</small>
+          <small></small>
         </p>
       </Paper>
     );
@@ -115,7 +115,7 @@ export default React.createClass ({
       email: {
         text: e.target.value,
         valid: false,
-        error: 'Please insert a valid email address.'
+        error: '이메일을 입력하세요.'
       }
     });
   },
@@ -125,7 +125,7 @@ export default React.createClass ({
         name: {
           text: e.target.value,
           valid: false,
-          error: 'Minimum length 6 characters'
+          error: '아이디는 6자 이상 입력하셔야 합니다.'
         }
       });
 
@@ -142,7 +142,7 @@ export default React.createClass ({
   changePassword (e) {
     try {
       if ( e.target.value.length < 8 ) {
-        throw 'Minimum length 8 characters';
+        throw '비밀번호는 8자 이상 입력하셔야 합니다.';
         return;
       }
 
@@ -165,7 +165,7 @@ export default React.createClass ({
         password_confirm: {
           text: e.target.value,
           valid: false,
-          error: 'Invalid Password'
+          error: '비밀번호가 일치하지 않습니다.'
         }
       });
 

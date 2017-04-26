@@ -21,13 +21,13 @@ export default React.createClass ({
       }
       else if ( data.error === null ) {
         localStorage.removeItem ('__voteapp_session');
-        
+
         this.props.dispatch ({
           type: 'SET_USER',
           data: null
         });
 
-        this.setState ({ message: 'Account disconnected! See you later!' });
+        this.setState ({ message: '로그아웃 되었습니다! See you later!' });
       }
       else this.setState ({ message: data.error });
 

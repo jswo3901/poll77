@@ -63825,7 +63825,7 @@
 	  render: function render() {
 	    if (!this.state.auth) return _react2.default.createElement('span', null);
 
-	    var poll_url = 'https://poll.herokuapp.com/poll/' + this.props.poll._id;
+	    var poll_url = 'https://poll77.herokuapp.com/poll/' + this.props.poll._id;
 	    console.log(this.props);
 	    return _react2.default.createElement(
 	      'div',
